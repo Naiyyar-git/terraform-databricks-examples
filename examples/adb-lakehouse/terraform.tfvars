@@ -1,5 +1,5 @@
 subscription_id = "64d53302-043c-437a-8d30-96458eef0261"
-account_id      = "<your Databricks Account ID here>"
+account_id      = ""
 
 location                        = "westus2"
 existing_resource_group_name    = "db_lh_example_rg"
