@@ -1,7 +1,7 @@
-subscription_id = "<your Azure Subscription ID here>"
+subscription_id = "64d53302-043c-437a-8d30-96458eef0261"
 account_id      = "<your Databricks Account ID here>"
 
-location                        = "ukwest"
+location                        = "westus2"
 existing_resource_group_name    = "db_lh_example_rg"
 project_name                    = "db_lh_example"
 environment_name                = "db_lh_example_env"
@@ -16,8 +16,8 @@ access_connector_name           = "db_lh_example_connector"
 landing_external_location_name  = "dblhexamplelanding"
 landing_adls_path               = "abfss://example@dblhexamplelanding.dfs.core.windows.net"
 landing_adls_rg                 = "dblhexamplelanding"
-metastore_admins                = ["<your email here>"]
+metastore_admins                = ["naiyyar@outlook.com"]
 
 tags = {
-  Owner = "<your email here>"
+  Owner = "naiyyar@outlook.com"
 }
