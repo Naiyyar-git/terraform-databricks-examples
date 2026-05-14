@@ -13,8 +13,8 @@ shared_resource_group_name      = "db_lh_example_shared_rg"
 metastore_name                  = "db_lh_metastore"
 metastore_storage_name          = "dblhmetastorestorage"
 access_connector_name           = "db_lh_example_connector"
-landing_external_location_name  = "dblhexamplelanding"
-landing_adls_path               = "abfss://example@dblhexamplelanding.dfs.core.windows.net"
+landing_external_location_name  = "dblhlandingnaiyyar"
+landing_adls_path               = "abfss://example@dblhlandingnaiyyar.dfs.core.windows.net"
 landing_adls_rg                 = "dblhexamplelanding"
 metastore_admins                = ["naiyyar@outlook.com"]
 
