@@ -39,44 +39,47 @@ pipeline {
       }
     }
 
-    stage('Phase 2 · Plan') {
-      steps {
-        dir('examples/adb-lakehouse') { sh 'terraform plan -out=tfplan-workspace' }
-      }
-    }
-    stage('Phase 2 · Approval') {
-      steps {
-        input message: 'Review the Phase 2 plan. Approve to apply?',
-              ok: 'Apply Phase 2'
-      }
-    }
-    stage('Phase 2 · Apply') {
-      steps {
-        dir('examples/adb-lakehouse') { sh 'terraform apply -auto-approve tfplan-workspace' }
-      }
-    }
+    // Phases 2 & 3 disabled — Unity Catalog requires an organizational Azure AD account.
+    // Uncomment when you have access to accounts.azuredatabricks.net.
 
-    stage('Phase 3 · Init') {
-      steps {
-        dir('examples/adb-unity-catalog-basic-demo') { sh 'terraform init' }
-      }
-    }
-    stage('Phase 3 · Plan') {
-      steps {
-        dir('examples/adb-unity-catalog-basic-demo') { sh 'terraform plan -out=tfplan-uc' }
-      }
-    }
-    stage('Phase 3 · Approval') {
-      steps {
-        input message: 'Review the Phase 3 plan. Approve to apply?',
-              ok: 'Apply Phase 3'
-      }
-    }
-    stage('Phase 3 · Apply') {
-      steps {
-        dir('examples/adb-unity-catalog-basic-demo') { sh 'terraform apply -auto-approve tfplan-uc' }
-      }
-    }
+    // stage('Phase 2 · Plan') {
+    //   steps {
+    //     dir('examples/adb-lakehouse') { sh 'terraform plan -out=tfplan-workspace' }
+    //   }
+    // }
+    // stage('Phase 2 · Approval') {
+    //   steps {
+    //     input message: 'Review the Phase 2 plan. Approve to apply?',
+    //           ok: 'Apply Phase 2'
+    //   }
+    // }
+    // stage('Phase 2 · Apply') {
+    //   steps {
+    //     dir('examples/adb-lakehouse') { sh 'terraform apply -auto-approve tfplan-workspace' }
+    //   }
+    // }
+
+    // stage('Phase 3 · Init') {
+    //   steps {
+    //     dir('examples/adb-unity-catalog-basic-demo') { sh 'terraform init' }
+    //   }
+    // }
+    // stage('Phase 3 · Plan') {
+    //   steps {
+    //     dir('examples/adb-unity-catalog-basic-demo') { sh 'terraform plan -out=tfplan-uc' }
+    //   }
+    // }
+    // stage('Phase 3 · Approval') {
+    //   steps {
+    //     input message: 'Review the Phase 3 plan. Approve to apply?',
+    //           ok: 'Apply Phase 3'
+    //   }
+    // }
+    // stage('Phase 3 · Apply') {
+    //   steps {
+    //     dir('examples/adb-unity-catalog-basic-demo') { sh 'terraform apply -auto-approve tfplan-uc' }
+    //   }
+    // }
 
   }
 

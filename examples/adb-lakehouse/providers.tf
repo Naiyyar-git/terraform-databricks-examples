@@ -20,11 +20,12 @@ provider "azurerm" {
   resource_provider_registrations = "none"
 }
 
-provider "databricks" {
-  alias      = "account"
-  host       = "https://accounts.azuredatabricks.net"
-  account_id = var.account_id
-}
+# Disabled — requires organizational Azure AD account for account-level API
+# provider "databricks" {
+#   alias      = "account"
+#   host       = "https://accounts.azuredatabricks.net"
+#   account_id = var.account_id
+# }
 
 provider "databricks" {
   alias = "workspace"
