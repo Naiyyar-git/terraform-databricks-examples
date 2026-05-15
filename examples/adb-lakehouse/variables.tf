@@ -144,6 +144,12 @@ variable "metastore_admins" {
   description = "list of principals: service principals or groups that have metastore admin privileges"
 }
 
+variable "workspace_user_emails" {
+  type        = list(string)
+  description = "Azure AD / Microsoft users to invite to this workspace with UI entitlements. If empty, metastore_admins is used."
+  default     = []
+}
+
 variable "account_id" {
   type        = string
   description = "Databricks Account ID"

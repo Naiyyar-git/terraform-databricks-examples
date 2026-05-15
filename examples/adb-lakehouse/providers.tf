@@ -28,6 +28,7 @@ provider "azurerm" {
 # }
 
 provider "databricks" {
-  alias = "workspace"
-  host  = module.adb-lakehouse.workspace_url
+  alias                       = "workspace"
+  host                        = module.adb-lakehouse.workspace_url
+  azure_workspace_resource_id = module.adb-lakehouse.workspace_resource_id
 }
